@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Components
-import Home from "@pages/Home";
+import Home from "../pages/Home";
 import Layout from "./Layout";
 import AuthComponent from "./Authenticate";
 import NotFound from "./NotFound";

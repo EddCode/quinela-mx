@@ -7,13 +7,18 @@ import GlobalStyles from "./styled/globalStyles";
 import App from "@components/App";
 import theme from "./styled/theme";
 
-ReactDom.render(
+const Main = (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
     <App />
-  </ThemeProvider>,
-  document.getElementById("app")
+  </ThemeProvider>
 );
+
+if (process.env.NODE_ENV !== "develop") {
+  ReactDom.hydrate(<Main />, document.getElementById("app"));
+} else {
+  ReactDom.render(<Main />, document.getElementById("app"));
+}
 
 if (module.hot) {
   module.hot.accept("./components/App", () => {

@@ -16,6 +16,13 @@ module.exports = merge(baseConfig, {
     publicPath: "/",
     historyApiFallback: true, // save history routes
   },
+  resolve: {
+    alias: {
+      "@pages": pathResolve("../src/pages"),
+      "@components": pathResolve("../src/components"),
+      "@styledComponents": pathResolve("../src/styled/Components"),
+    }
+  },
   module: {
     rules: [
       {

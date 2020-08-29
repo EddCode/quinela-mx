@@ -13,11 +13,6 @@ module.exports = {
   entry: path.resolve(__dirname, "../src/index.js"),
   resolve: {
     extensions: [".js", ".jsx"],
-    alias: {
-      "@pages": pathResolve("../src/pages"),
-      "@components": pathResolve("../src/components"),
-      "@styledComponents": pathResolve("../src/styled/Components"),
-    },
   },
   module: {
     rules: [
