@@ -12,34 +12,22 @@ const PORT = process.env.CLIENT_PORT || 8080;
 
 module.exports = {
   devtool: "eval-source-map",
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: path.resolve(__dirname, "../src/index.js"),
   output: {
     path: DIR_BASE,
     publicPath: "/",
     filename: "[name].js",
   },
-  devServer: {
-    host: "0.0.0.0",
-    port: PORT,
-    hot: true,
-    contentBase: DIR_BASE,
-    publicPath: "/",
-    historyApiFallback: true, // save history routes
-  },
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      "@pages": pathResolve("./src/pages"),
-      "@components": pathResolve("./src/components"),
-      "@styledComponents": pathResolve("./src/styled/Components"),
+      "@pages": pathResolve("../src/pages"),
+      "@components": pathResolve("../src/components"),
+      "@styledComponents": pathResolve("../src/styled/Components"),
     },
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
-      },
       {
         test: /\.(js|jsx)/,
         exclude: /node_modules/,
@@ -73,6 +61,5 @@ module.exports = {
       NODE_ENV: process.env.NODE_ENV || "development",
       API: process.env.API || `http://${API_HOST}:${API_PORT}/api`,
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 };
