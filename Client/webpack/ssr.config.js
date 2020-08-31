@@ -10,7 +10,7 @@ const pathResolve = (route) => path.resolve(__dirname, route);
 module.exports = merge(baseConfig, {
   output: {
     path: DIR_BASE,
-    publicPath: "/",
+    publicPath: "/assets",
     filename: "[name].js",
   },
   resolve: {

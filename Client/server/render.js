@@ -9,9 +9,10 @@ import { renderRoutes } from "react-router-config";
 
 const app = express();
 
-app.use(express.static("static"));
+app.use("assets", express.static("static"));
 
-app.use("*", (req, res) => {
+app.get("^/$", (req, res) => {
+  console.log("amm esto no se po rque no se ejecuta");
   const context = {};
   const app = ReactDom.renderToString(
     <StaticRouter location={req.url} context={context}>
@@ -19,11 +20,12 @@ app.use("*", (req, res) => {
     </StaticRouter>
   );
 
-  const indexHtml = path.resolve(__dirname, "../../static/index.html");
+  console.log(app, "pos es app");
+  const indexHtml = path.resolve(__dirname, "../static/index.html");
   fs.readFile(indexHtml, "utf8", (err, html) => {
     if (err) {
-      console.err(err);
-      return res, status(500).send("Some error happend");
+      console.error(err);
+      return res.status(500).send("Some error happend");
     }
 
     if (context.status === 404) {
@@ -31,7 +33,7 @@ app.use("*", (req, res) => {
     }
 
     return res.send(
-      data.replace('<main id="app"></main>', `<main id="app">${app}</main>`)
+      html.replace('<main id="app"></main>', `<main id="app">${app}</main>`)
     );
   });
 });
