@@ -1,16 +1,15 @@
 const path = require("path");
 const webpack = require("webpack");
 
-// Bundled files dir.
-const pathResolve = (route) => path.resolve(__dirname, route);
-
 const API_HOST = process.env.API || "localhost";
 const API_PORT = process.env.PORT || 3000;
-const PORT = process.env.CLIENT_PORT || 8080;
 
 module.exports = {
   devtool: "eval-source-map",
-  entry: path.resolve(__dirname, "../src/index.js"),
+  entry: {
+    index: path.resolve(__dirname, "../src/index.js"),
+    vendor: ["react"],
+  },
   resolve: {
     extensions: [".js", ".jsx"],
   },

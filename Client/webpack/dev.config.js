@@ -3,9 +3,13 @@ const {merge} = require('webpack-merge')
 const baseConfig = require('./base.config.js')
 const path = require('path')
 
+// Bundled files dir.
+const pathResolve = (route) => path.resolve(__dirname, route);
+
+
 const PORT = process.env.CLIENT_PORT || 8080;
 
-const DIR_BASE = path.join(__dirname, "../build");
+const DIR_BASE = path.join(__dirname, "../static");
 
 module.exports = merge(baseConfig, {
    devServer: {

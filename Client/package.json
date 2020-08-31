@@ -19,7 +19,7 @@
     "start": "NODE_ENV=develop webpack-dev-server -d --config ./webpack/dev.config.js",
     "build": "NODE_ENV=production webpack -p --config ./webpack/ssr.config.js",
     "build:stage": "NODE_ENV=stage webpack -wd --config ./webpack/ssr.config.js",
-    "serve:dev": "nodemon --exec babel-node ./src/ssr/render.js"
+    "serve:dev": " npm run build:stage & nodemon --exec babel-node ./server/render.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.1.2",
+    "react-router-config": "^5.1.1",
     "react-router-dom": "^5.1.2",
     "styled-components": "^5.1.1"
   },

@@ -5,20 +5,11 @@ import GlobalStyles from "./styled/globalStyles";
 
 // App entry point
 import App from "@components/App";
-import theme from "./styled/theme";
 
-const Main = (
-  <ThemeProvider theme={theme}>
-    <GlobalStyles />
-    <App />
-  </ThemeProvider>
-);
+const container = document.getElementById("app");
 
-if (process.env.NODE_ENV !== "develop") {
-  ReactDom.hydrate(<Main />, document.getElementById("app"));
-} else {
-  ReactDom.render(<Main />, document.getElementById("app"));
-}
+if (process.env.NODE_ENV !== "develop") ReactDom.hydrate(<App />, container);
+else ReactDom.render(<App />, container);
 
 if (module.hot) {
   module.hot.accept("./components/App", () => {
