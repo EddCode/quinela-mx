@@ -9,10 +9,11 @@ import { renderRoutes } from "react-router-config";
 
 const app = express();
 
-app.use("assets", express.static("static"));
+const staticFilesPath = path.resolve(__dirname, "..", "build");
+console.log(staticFilesPath);
+app.use("/public/", express.static(staticFilesPath));
 
 app.get("^/$", (req, res) => {
-  console.log("amm esto no se po rque no se ejecuta");
   const context = {};
   const app = ReactDom.renderToString(
     <StaticRouter location={req.url} context={context}>
@@ -20,8 +21,7 @@ app.get("^/$", (req, res) => {
     </StaticRouter>
   );
 
-  console.log(app, "pos es app");
-  const indexHtml = path.resolve(__dirname, "../static/index.html");
+  const indexHtml = path.resolve(__dirname, "../build/index.html");
   fs.readFile(indexHtml, "utf8", (err, html) => {
     if (err) {
       console.error(err);

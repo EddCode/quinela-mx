@@ -7,7 +7,7 @@ const API_PORT = process.env.PORT || 3000;
 module.exports = {
   devtool: "eval-source-map",
   entry: {
-    index: path.resolve(__dirname, "../src/index.js"),
+    main: path.resolve(__dirname, "../src/index.js"),
     vendor: ["react"],
   },
   resolve: {
@@ -25,8 +25,8 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            outputPath: "assets/",
-            publicPath: "assets",
+            outputPath: "public/",
+            publicPath: "public",
             name: "[path][name].[ext]",
           },
         },
