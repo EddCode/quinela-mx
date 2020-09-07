@@ -14,8 +14,8 @@ const Main = (
   </Router>
 );
 
-if (process.env.NODE_ENV !== "develop") ReactDom.hydrate(<App />, container);
-else ReactDom.render(<App />, container);
+if (process.env.NODE_ENV !== "develop") ReactDom.hydrate(<Main />, container);
+else ReactDom.render(<Main />, container);
 
 if (module.hot) {
   module.hot.accept("./components/App", () => {
