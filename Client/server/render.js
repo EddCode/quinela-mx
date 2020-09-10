@@ -10,10 +10,10 @@ import { renderRoutes } from "react-router-config";
 const app = express();
 
 const staticFilesPath = path.resolve(__dirname, "..", "build");
-console.log(staticFilesPath);
+
 app.use("/public/", express.static(staticFilesPath));
 
-app.get("^/$", (req, res) => {
+app.get("*", (req, res) => {
   const context = {};
   const app = ReactDom.renderToString(
     <StaticRouter location={req.url} context={context}>
@@ -31,6 +31,8 @@ app.get("^/$", (req, res) => {
     if (context.status === 404) {
       res.status(404);
     }
+
+    console.log(app, "LOG app");
 
     return res.send(
       html.replace('<main id="app"></main>', `<main id="app">${app}</main>`)
