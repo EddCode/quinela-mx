@@ -20,6 +20,7 @@ const App = () => {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/dashboard" component={Dashboard} />
             <AuthComponent>
               <Route path="/dashboard" component={Dashboard} />
             </AuthComponent>

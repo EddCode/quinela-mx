@@ -7,11 +7,10 @@ const Header = () => {
       <Link to="/"> Home </Link>
       <ul>
         <li>
-          <Link to="login">Item</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
       </ul>
     </header>
   );
 };
 export default Header;
-

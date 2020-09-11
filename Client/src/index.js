@@ -6,16 +6,10 @@ import { createBrowserHistory } from "history";
 // App entry point
 import App from "@components/App";
 
-const history = createBrowserHistory();
 const container = document.getElementById("app");
-const Main = (
-  <Router history={history}>
-    <App />
-  </Router>
-);
 
-if (process.env.NODE_ENV !== "develop") ReactDom.hydrate(<Main />, container);
-else ReactDom.render(<Main />, container);
+if (process.env.NODE_ENV !== "develop") ReactDom.hydrate(<App />, container);
+else ReactDom.render(<App />, container);
 
 if (module.hot) {
   module.hot.accept("./components/App", () => {
