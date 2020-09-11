@@ -1,4 +1,6 @@
 {
   "main.js": "/publicmain.js",
-  "vendor.js": "/publicvendor.js"
+  "vendor.js": "/publicvendor.js",
+  "favicon.ico": "/publicfavicon.ico",
+  "index.html": "/publicindex.html"
 }

@@ -10,11 +10,10 @@ const PORT = process.env.CLIENT_PORT || 8080;
 
 module.exports = merge(baseConfig, {
   devServer: {
-    host: "0.0.0.0",
     port: PORT,
     hot: true,
-    contentBase: path.resolve(__dirname, '../src/'),
-    publicPath: path.resolve(__dirname, '../src/'),
+    contentBase: path.join(__dirname, "../dist"),
+    publicPath: "/",
     historyApiFallback: true, // save history routes
   },
   resolve: {

@@ -1,4 +1,5 @@
 import Home from "../pages/Home";
+import Dashboard from "../components/Protected";
 import React from "react";
 
 export default [
@@ -9,7 +10,7 @@ export default [
   },
   {
     exact: true,
-    path: "/login",
-    component: <h1>Hello</h1>,
+    path: "/dashboard",
+    component: Dashboard,
   },
 ];

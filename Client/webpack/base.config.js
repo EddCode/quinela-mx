@@ -8,7 +8,7 @@ module.exports = {
   devtool: "eval-source-map",
   entry: {
     main: path.resolve(__dirname, "../src/index.js"),
-    vendor: ["react"],
+    vendor: ["react", "react-dom", "react-router-dom"],
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -26,7 +26,7 @@ module.exports = {
           loader: "file-loader",
           options: {
             outputPath: "public/",
-            publicPath: "public",
+            publicPath: "/",
             name: "[path][name].[ext]",
           },
         },
