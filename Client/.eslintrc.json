@@ -13,6 +13,8 @@
   },
   "plugins": ["react"],
   "rules": {
-    "semi": ["off", "none"]
+    "no-console": 1,
+    "semi": ["error", "never"],
+    "quotes": ["error", "double"]
   }
 }

@@ -3,17 +3,14 @@ const baseConfig = require("./base.config.js");
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ManifestWebpackPlugin = require("webpack-manifest-plugin");
-const webpack = require("webpack");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const pathResolve = (route) => path.resolve(__dirname, route);
 
 module.exports = merge(baseConfig, {
-  devtool: "eval-source-map",
-  entry: {
-    main: [
-      path.resolve(__dirname, "../src/index.js"),
-      "webpack-hot-middleware/client?path=/__webpack_hmr&reload=true",
-    ],
+  devtool: "none",
+  output: {
+    filename: "js/[name].[hash].js",
   },
   resolve: {
     alias: {
@@ -32,6 +29,27 @@ module.exports = merge(baseConfig, {
   },
   optimization: {
     minimize: true,
+    minimizer: [new TerserPlugin()],
+    splitChunks: {
+      chunks: "async",
+      cacheGroups: {
+        vendros: {
+          name: "vendors",
+          chunks: "all",
+          reuseExistingChunk: true,
+          priority: 1,
+          filename: "js/[name].[hash].js",
+          enforce: true,
+          test(module, chunks) {
+            const name = module.nameForCondition && module.nameForCondition();
+            return chunks.some(
+              (chunk) =>
+                chunk.name !== "vendor" && /[\\/]node_modules[\\/]/.test(name)
+            );
+          },
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -43,6 +61,5 @@ module.exports = merge(baseConfig, {
     new ManifestWebpackPlugin({
       publicPath: "/public",
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 });

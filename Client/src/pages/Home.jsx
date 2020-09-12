@@ -5,7 +5,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>init {counter}</h1>
+      <h1>init {counter} module</h1>
       <button onClick={() => setCounter(counter + 1)}>increment</button>
       <button onClick={() => setCounter(counter - 1)}>decrement</button>
     </>

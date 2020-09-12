@@ -9,6 +9,10 @@ import { renderRoutes } from "react-router-config";
 
 const app = express();
 
+if (process.env.NODE_ENV === "develop") {
+  require("./hotModuleReplacement")(app);
+}
+
 const staticFilesPath = path.resolve(__dirname, "..", "build");
 
 app.use("/public", express.static(staticFilesPath));

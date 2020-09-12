@@ -1,4 +1,8 @@
 {
-  "main.js": "/publicmain.js",
-  "vendor.js": "/publicvendor.js"
+  "vendors.js": "/publicjs/vendors.e4c007712e45cf2c3c43.js",
+  "main.js": "/publicjs/main.e4c007712e45cf2c3c43.js",
+  "vendor.js": "/publicjs/vendor.e4c007712e45cf2c3c43.js",
+  "favicon.ico": "/publicfavicon.ico",
+  "index.html": "/publicindex.html",
+  "js/vendors.e4c007712e45cf2c3c43.js.LICENSE.txt": "/publicjs/vendors.e4c007712e45cf2c3c43.js.LICENSE.txt"
 }
