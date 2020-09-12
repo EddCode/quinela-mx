@@ -1,8 +1,8 @@
 {
-  "vendors.js": "/publicjs/vendors.e4c007712e45cf2c3c43.js",
-  "main.js": "/publicjs/main.e4c007712e45cf2c3c43.js",
-  "vendor.js": "/publicjs/vendor.e4c007712e45cf2c3c43.js",
+  "main.js": "/publicjs/main.js",
+  "vendors.js": "/publicjs/vendors.js",
+  "vendors~main.js": "/publicjs/vendors~main.js",
+  "vendors~main~vendors.js": "/publicjs/vendors~main~vendors.js",
   "favicon.ico": "/publicfavicon.ico",
-  "index.html": "/publicindex.html",
-  "js/vendors.e4c007712e45cf2c3c43.js.LICENSE.txt": "/publicjs/vendors.e4c007712e45cf2c3c43.js.LICENSE.txt"
+  "index.html": "/publicindex.html"
 }

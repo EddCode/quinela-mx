@@ -8,8 +8,10 @@ export default (app) => {
   const configDev = {
     publicPath: webpackConfig.output.publicPath,
     hot: true,
+    port: 5000,
+    noInfo: true,
   };
 
   app.use(webpackDevMiddleware(webpackBuild, configDev));
-  app.use(webpackHotMiddleware(webpackBuild));
+  app.use(webpackHotMiddleware(webpackBuild, { path: "/__webpack_hmr" }));
 };

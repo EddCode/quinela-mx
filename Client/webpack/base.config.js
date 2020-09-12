@@ -9,14 +9,12 @@ const DIR_BASE = path.join(__dirname, "../build");
 module.exports = {
   entry: {
     main: path.resolve(__dirname, "../src/index.js"),
-    vendor: ["react", "react-dom", "react-router-dom"],
+    vendors: ["react", "react-dom", "react-router-dom"],
   },
   output: {
     path: DIR_BASE,
     publicPath: "/public",
-    filename: "[name].js",
-    hotUpdateChunkFilename: ".hot/hot-update.js",
-    hotUpdateMainFilename: ".hot/hot-update.json",
+    filename: "js/[name].js",
   },
   optimization: {
     splitChunks: {

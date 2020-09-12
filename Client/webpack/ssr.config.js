@@ -9,6 +9,7 @@ const pathResolve = (route) => path.resolve(__dirname, route);
 
 module.exports = merge(baseConfig, {
   devtool: "eval-source-map",
+  mode: "development",
   entry: {
     main: [
       path.resolve(__dirname, "../src/index.js"),
