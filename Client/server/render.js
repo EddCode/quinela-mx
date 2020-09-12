@@ -32,8 +32,6 @@ app.get("*", (req, res) => {
       res.status(404);
     }
 
-    console.log(app, "LOG app");
-
     return res.send(
       html.replace('<main id="app"></main>', `<main id="app">${app}</main>`)
     );
