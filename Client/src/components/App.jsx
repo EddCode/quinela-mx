@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
+import { createMemoryHistory } from "history";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styled/globalStyles";
 
@@ -12,11 +13,13 @@ import Dashboard from "./Protected";
 
 import theme from "../styled/theme";
 
+const history = createMemoryHistory();
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Router>
+      <Router history={history}>
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />

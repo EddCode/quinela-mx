@@ -11,7 +11,7 @@ const app = express();
 
 const staticFilesPath = path.resolve(__dirname, "..", "build");
 
-app.use("/public/", express.static(staticFilesPath));
+app.use("/public", express.static(staticFilesPath));
 
 app.get("*", (req, res) => {
   const context = {};
