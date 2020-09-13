@@ -50,7 +50,7 @@ module.exports = {
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: process.env.NODE_ENV || "development",
-      API: process.env.API || `http://localhost:5000/api`,
+      API: process.env.API || `http://localhost:3000/api`,
     }),
   ],
 };
