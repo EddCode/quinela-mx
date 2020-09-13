@@ -15,6 +15,10 @@
   "rules": {
     "no-console": 1,
     "semi": ["error", "never"],
-    "quotes": ["error", "double"]
+    "quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ]
   }
 }

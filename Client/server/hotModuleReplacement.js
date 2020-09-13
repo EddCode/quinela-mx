@@ -7,11 +7,14 @@ export default (app) => {
   const webpackBuild = webpack(webpackConfig);
   const configDev = {
     publicPath: webpackConfig.output.publicPath,
-    hot: true,
-    port: 5000,
-    noInfo: true,
+    stats: { colors: true },
   };
 
   app.use(webpackDevMiddleware(webpackBuild, configDev));
-  app.use(webpackHotMiddleware(webpackBuild, { path: "/__webpack_hmr" }));
+  app.use(
+    webpackHotMiddleware(webpackBuild, {
+      log: console.log,
+      path: "/__webpack_hmr",
+    })
+  );
 };

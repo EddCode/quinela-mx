@@ -1,0 +1,49 @@
+{
+  "name": "dragonballstore",
+  "version": "1.0.0",
+  "description": "Store for dragonball figuarts",
+  "main": "./src/index.js",
+  "contributors": [
+    {
+      "name": "Rafael Lopez",
+      "email": "rafael.iskoat@gmail.com",
+      "url": "https://github.com/Rafael-LH"
+    },
+    {
+      "name": "Edgar Figueroa",
+      "email": "edgar.figueroa.gtz@gmail.com",
+      "url": "https://github.com/eddcode"
+    }
+  ],
+  "scripts": {
+    "serve": "NODE_ENV=develop nodemon -e js,gql,graphql --exec babel-node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FiguartsDB/DragonBallStore.git"
+  },
+  "author": "quinelaMX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FiguartsDB/DragonBallStore/issues"
+  },
+  "homepage": "https://github.com/FiguartsDB/DragonBallStore#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "graphql-playground-middleware-express": "^1.7.20",
+    "graphql-tools": "^6.2.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "nodemon": "^2.0.4"
+  }
+}
