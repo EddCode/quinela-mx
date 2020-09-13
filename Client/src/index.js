@@ -8,7 +8,8 @@ const container = document.getElementById("app");
 
 ReactDom.hydrate(<App />, container);
 
-if (module.hot && process.env.NODE_ENV !== "develop") {
+if (module.hot ) {
+  console.log(module.hot);
   module.hot.accept("./components/App", () => {
     const App = require("./components/App").default;
     ReactDom.render(<App />, document.getElementById("app"));

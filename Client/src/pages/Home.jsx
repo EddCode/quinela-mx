@@ -12,8 +12,9 @@ const Home = () => {
 
   return (
     <>
-      <h1>Counter {counter} with hot module 😎 alo</h1>
-      <h1>Hello parners</h1>
+      <h1>Counter {counter} </h1>
+      <h2>With hot module replacement 😎</h2>
+      <h3>Hello parners</h3>
       <ul>
         {data.users.map((user) => (
           <li key={user.id}>{user.name}</li>

@@ -13,7 +13,7 @@ module.exports = merge(baseConfig, {
   entry: {
     main: [
       path.resolve(__dirname, "../src/index.js"),
-      "webpack-hot-middleware/client?path=/__webpack_hmr&reload=true",
+      "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&overlay=false",
     ],
   },
   resolve: {
