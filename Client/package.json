@@ -35,7 +35,9 @@
   },
   "homepage": "https://github.com/FiguartsDB/DragonBallStore#readme",
   "dependencies": {
+    "@apollo/client": "^3.1.5",
     "express": "4.17.1",
+    "graphql": "^15.3.0",
     "history": "5.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",

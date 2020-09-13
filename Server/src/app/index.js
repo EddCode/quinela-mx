@@ -9,7 +9,7 @@ import resolvers from "../graphql/resolvers";
 
 const app = express();
 
-app.set("port", 5000);
+app.set("port", 3000);
 
 app.use(cors());
 app.use(morgan("dev", { immediate: true }));
