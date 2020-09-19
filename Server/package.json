@@ -35,6 +35,7 @@
     "graphql": "^15.3.0",
     "graphql-playground-middleware-express": "^1.7.20",
     "graphql-tools": "^6.2.2",
+    "mongoose": "^5.10.6",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
