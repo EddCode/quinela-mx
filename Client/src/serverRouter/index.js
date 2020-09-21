@@ -1,7 +1,8 @@
+import React from "react";
 import App from "../components/App";
 import Home from "../pages/Home";
 import Dashboard from "../components/Protected";
-import React from "react";
+import Login from "../pages/Login";
 
 export default [
   {
@@ -16,6 +17,11 @@ export default [
         exact: true,
         path: "/dashboard",
         component: Dashboard,
+      },
+      {
+        exact: true,
+        path: "login",
+        component: Login,
       },
     ],
   },

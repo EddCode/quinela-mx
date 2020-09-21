@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Router, Switch, Route } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styled/globalStyles";
@@ -10,6 +10,7 @@ import Layout from "./Layout";
 import AuthComponent from "./Authenticate";
 import NotFound from "./NotFound";
 import Dashboard from "./Protected";
+import Login from "../pages/login";
 
 import theme from "../styled/theme";
 
@@ -23,7 +24,8 @@ const App = () => {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/login" component={Login} />
             <AuthComponent>
               <Route path="/dashboard" component={Dashboard} />
             </AuthComponent>

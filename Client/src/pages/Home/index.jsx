@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 
-import { USERS } from "../services/api/graphql/user";
+import { USERS } from "../../services/api/graphql/user";
 
 const Home = () => {
   const { loading, error, data } = useQuery(USERS);

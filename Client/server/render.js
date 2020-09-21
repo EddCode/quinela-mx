@@ -7,6 +7,7 @@ import serverRoutes from "../src/serverRouter";
 import { StaticRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 
+import App from "../src/components/App";
 const app = express();
 
 if (process.env.NODE_ENV === "develop") {
